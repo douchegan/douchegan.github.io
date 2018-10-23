@@ -1,6 +1,6 @@
 ## Welcome to GitHub Pages1
 
-打开[个人主页](index.html)
+打开[个人主页](./index.html)
 
 You can use the [editor on GitHub](https://github.com/douchegan/douchegan.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 

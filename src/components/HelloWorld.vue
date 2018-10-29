@@ -1,15 +1,23 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div class="hello" id="page-index">
+    <h1>
+      <span :class="animateV + ' animated'">{{ msg }}</span>
+    </h1>
+    <div class="animate-select">
+      <span>动画选择：</span>
+      <el-select v-model="animateV" placeholder="请选择">
+        <el-option
+          v-for="item in animateOpt"
+          :key="item"
+          :label="item"
+          :value="item">
+        </el-option>
+      </el-select>
+    </div>
     <h2>Some Links</h2>
-    <ul>
-      <li>
-        <a
-          href="/static/d3/index.html"
-          target="_blank"
-        >
-          d3示例
-        </a>
+    <ul class="links">
+      <li v-for="(item, index) in links" :key="index">
+        <a :href="item" target="_blank">{{index}}</a>
       </li>
     </ul>
     <el-carousel :interval="5000" height="200px" trigger="click">
@@ -22,13 +30,20 @@
 
 <script>
 import text from './text.js'
+import { animateOpt } from './optionData.js'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Dx’s page',
-      text: text.carousel
+      text: text.carousel,
+      links: text.links,
+      animateOpt: animateOpt,
+      animateV: animateOpt[0]
     }
+  },
+  mounted () {
+    //
   }
 }
 </script>
@@ -42,7 +57,7 @@ ul {
   list-style-type: none;
   padding: 0;
 }
-li {
+.links li {
   display: inline-block;
   margin: 0 10px;
 }
@@ -58,11 +73,26 @@ a {
     padding: 20px;
     line-height: 30px;
   }
+  h1{
+    >span{
+      display: inline-block
+    }
+  }
+  .animate-select{
+    margin: 10px 0;
+  }
 }
 </style>
-<style>
+<style lang="scss">
 .el-carousel {
   width: 50%;
   margin: 0 auto;
+}
+#page-index{
+  .el-input__inner{
+    background: #30314847 !important;
+    color: #fff !important;
+    border: none !important;
+  }
 }
 </style>

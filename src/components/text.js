@@ -6,7 +6,13 @@ const text = {
     '埋了一座城，关了所有灯。',
     '青灯为墙<br/>旖旎为家<br/>以梦为马<br/>不负韶华',
     '我的灯和酒坛上落满灰尘<br/>而遥远的路程上却干干净净'
-  ]
+  ],
+  links: {
+    'd3示例': '/static/d3/index.html',
+    '百度': 'https://www.baidu.com/',
+    '谷歌': 'https://www.google.com.hk/',
+    '必应': 'https://cn.bing.com/'
+  }
 }
 
 export default text

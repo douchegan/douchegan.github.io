@@ -25,6 +25,7 @@
         <div class="carousel-div" v-html="item"></div>
       </el-carousel-item>
     </el-carousel>
+    <el-button @click="getPdf('body')">导出PDF</el-button>
   </div>
 </template>
 
@@ -39,7 +40,8 @@ export default {
       text: text.carousel,
       links: text.links,
       animateOpt: animateOpt,
-      animateV: animateOpt[0]
+      animateV: animateOpt[0],
+      htmlTitle: '导出的pdf文件'
     }
   },
   mounted () {

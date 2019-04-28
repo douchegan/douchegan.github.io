@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 	// 向数组中的每个对象添加位置
 	addXY = (arr, x) => {
 		var clueLength = arr.length;

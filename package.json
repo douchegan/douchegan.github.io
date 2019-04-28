@@ -14,7 +14,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "element-ui": "^2.4.8",
+    "leaflet": "^1.4.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

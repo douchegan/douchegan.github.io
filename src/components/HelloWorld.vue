@@ -25,13 +25,17 @@
         <div class="carousel-div" v-html="item"></div>
       </el-carousel-item>
     </el-carousel>
+    <div id="leafletMap"></div>
     <el-button @click="getPdf('body')">导出PDF</el-button>
+    <el-button @click="printPDF">打印PDF</el-button>
   </div>
 </template>
 
 <script>
 import text from './text.js'
 import { animateOpt } from './optionData.js'
+import L from 'leaflet'
+// import $ from '../../static/js/jquery.min.js'
 export default {
   name: 'HelloWorld',
   data () {
@@ -44,8 +48,23 @@ export default {
       htmlTitle: '导出的pdf文件'
     }
   },
+  methods: {
+    initMap () {
+      let map = L.map('leafletMap', {
+        minZoom: 3,
+        maxZoom: 18,
+        center: [31.5, 113.09],
+        zoom: 11,
+        attributionControl: false
+      })
+      L.tileLayer('http://online{s}.map.bdimg.com/tile/?qt=tile&styles=pl&scaler=2&x={x}&y={y}&z={z}').addTo(map)
+    },
+    printPDF () {
+      window.print()
+    }
+  },
   mounted () {
-    //
+    // this.initMap()
   }
 }
 </script>
@@ -83,6 +102,13 @@ a {
   .animate-select{
     margin: 10px 0;
   }
+}
+#leafletMap{
+  height: 400px;
+  width: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 9999;
 }
 </style>
 <style lang="scss">

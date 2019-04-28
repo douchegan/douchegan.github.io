@@ -6,6 +6,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
 import htmlToPDF from './utils/htmlToPDF'
+import '../static/js/test1'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
